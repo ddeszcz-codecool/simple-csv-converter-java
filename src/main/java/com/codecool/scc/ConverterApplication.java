@@ -1,8 +1,10 @@
 package com.codecool.scc;
 
 import com.codecool.scc.models.OutputFormat;
+import com.codecool.scc.services.SimpleCsvConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.io.File;
 
@@ -13,7 +15,8 @@ public class ConverterApplication {
         int intTimesRepeated = 20;
         System.out.println("\n\n"+ "-".repeat(intTimesRepeated) + "CONFIGURATION STARTS" + "-".repeat(intTimesRepeated) + "\n\n");
 
-        SpringApplication.run(ConverterApplication.class, args);
+        ApplicationContext ctx = SpringApplication.run(ConverterApplication.class, args);
+        SimpleCsvConverter scc = (SimpleCsvConverter) ctx.getBean("simpleCsvConverter");
 
         System.out.println("\n\n"+ "-".repeat(intTimesRepeated) + "CONFIGURATION ENDS, APP STARTs" + "-".repeat(intTimesRepeated) + "\n\n");
 
@@ -28,6 +31,7 @@ public class ConverterApplication {
 
             case 1:
                 file = new File(args[0]);
+                scc.convert(file);
                 break;
 
             case 2:
@@ -38,6 +42,7 @@ public class ConverterApplication {
                     break;
                 }
                 file = new File(args[1]);
+                scc.convert(file,outputFormat);
                 break;
 
 
