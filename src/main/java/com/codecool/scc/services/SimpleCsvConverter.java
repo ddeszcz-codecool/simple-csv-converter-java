@@ -24,7 +24,6 @@ public class SimpleCsvConverter {
     public void convert(File file) {
 
         try {
-            System.out.println("I convert CSV to output format, outputFormat not provided\n\n\n");
             List<String[]> data = fileReaderDao.readData(file);
             OutputFormatter outputFormatter = outputFormatterFactory.createByFormat(OutputFormat.TABLE);
             outputFormatter.printToConsole(data);
@@ -38,7 +37,6 @@ public class SimpleCsvConverter {
     public void convert(File file, OutputFormat outputFormat) {
 
         try {
-            System.out.println("I convert CSV to output format, outputFormat provided\n\n\n");
             List<String[]> data = fileReaderDao.readData(file);
             OutputFormatter outputFormatter = outputFormatterFactory.createByFormat(outputFormat);
             outputFormatter.printToConsole(data);

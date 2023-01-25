@@ -10,7 +10,6 @@ public class XmlOutputFormatter implements OutputFormatter {
 
         for (String[] line : data) {
             System.out.println("\t<row>");
-
             for (String column : line) {
                 System.out.println("\t\t<column>" + column + "</column>");
             }

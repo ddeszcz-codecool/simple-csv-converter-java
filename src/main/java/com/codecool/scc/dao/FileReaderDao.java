@@ -12,14 +12,7 @@ import java.util.List;
 public class FileReaderDao {
 
     public List<String[]> readData(File file) throws IOException {
-
-        System.out.println("check\n\n");
-
-
             CSVReader csvReader = new CSVReader(new FileReader(file));
-            System.out.println("\nI read file\n");
-            System.out.println(csvReader.readAll());
             return csvReader.readAll();
-
     }
 }
