@@ -10,12 +10,13 @@ import java.io.File;
 public class ConverterApplication {
 
     public static void main(String[] args) {
-
-        System.out.println("\n\n------------------------------- CONFIGURATION STARTS -------------------------------\n\n");
+        int intTimesRepeated = 20;
+        System.out.println("\n\n"+ "-".repeat(intTimesRepeated) + "CONFIGURATION STARTS" + "-".repeat(intTimesRepeated) + "\n\n");
 
         SpringApplication.run(ConverterApplication.class, args);
 
-        System.out.println("\n\n---------------------------CONFIGURATION ENDS, APP STARTs --------------------------\n\n");
+        System.out.println("\n\n"+ "-".repeat(intTimesRepeated) + "CONFIGURATION ENDS, APP STARTs" + "-".repeat(intTimesRepeated) + "\n\n");
+
 
         File file;
         OutputFormat outputFormat;
